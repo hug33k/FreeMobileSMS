@@ -1,5 +1,7 @@
 #Free Mobile SMS
 
+![Logo Free Mobile](http://www.universfreebox.com/UserFiles/image/freemobile(1).png)
+
 ##Description
 
 Python client to send SMS via french mobile operator Free Mobile.
