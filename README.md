@@ -39,4 +39,4 @@ $>./sms.py --config=my_config.json "Hello world"
 
 ##Want to use this service with an other Python project?
 
-You just have to reuse the FreeeMobileSMS class, it is easy to use ;)
+You just have to reuse the FreeMobileSMS class, it is easy to use ;)
