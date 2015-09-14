@@ -36,3 +36,7 @@ $>./sms.py --config=my_config.json "Hello world"
     You can enable the service in your [Free Mobile panel](https://mobile.free.fr/moncompte/)
 * 500 : Server not available
     You have to try later.
+
+##Want to use this service with an other Python project?
+
+You just have to reuse the FreeeMobileSMS class, it is easy to use ;)
