@@ -1,5 +1,7 @@
 #Free Mobile SMS
 
+![Logo Free Mobile](http://www.universfreebox.com/UserFiles/image/freemobile(1).png)
+
 ##Description
 
 Python client to send SMS via french mobile operator Free Mobile.
@@ -31,12 +33,12 @@ $>./sms.py --config=my_config.json "Hello world"
 * 200 : Message send
 * 400 : Missing parameter
 * 402 : Too much messages send
-    You have to wait a little to reuse it.
+    * You have to wait a little to reuse it.
 * 403 : Service not enable
-    You can enable the service in your [Free Mobile panel](https://mobile.free.fr/moncompte/)
+    * You can enable the service in your [Free Mobile panel](https://mobile.free.fr/moncompte/)
 * 500 : Server not available
-    You have to try later.
+    * You have to try later.
 
 ##Want to use this service with an other Python project?
 
-You just have to reuse the FreeeMobileSMS class, it is easy to use ;)
+You just have to reuse the FreeMobileSMS class, it is easy to use ;)
