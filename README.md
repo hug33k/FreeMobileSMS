@@ -8,7 +8,12 @@ Python client to send SMS via french mobile operator Free Mobile.
 
 ##Configuration
 
-You have to write your informations in config.json like this :
+###With environment variables
+
+You need to set ___SMS_LOGIN___ and ___SMS_TOKEN___ variables.
+
+###With configuratino file
+You have to write your informations in a file like this :
 ````json
 {
     "login": YOUR_FREE_MOBILE_LOGIN,
@@ -16,7 +21,7 @@ You have to write your informations in config.json like this :
 }
 ````
 
-You can use a different name for config file but you have to launch script with specific flag (--config=FILE).
+Now, you can have to use it with specific flag (--config=_FILE_).
 
 ##Usage
 

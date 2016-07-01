@@ -2,14 +2,14 @@
 # -*- coding: utf8 -*-
 
 import json
+import os
 import sys
 import urllib
 
 class FreeMobileSMS(object):
 
-	def __init__(self, config_file="config.json"):
+	def __init__(self, config=None):
 		self._URL = "https://smsapi.free-mobile.fr/sendmsg?user={0}&pass={1}&msg={2}"
-		self._file = config
 		self._codes = {
 			200: "Message send",
 			400: "Missing parameter",
@@ -17,13 +17,21 @@ class FreeMobileSMS(object):
 			403: "Service not enable",
 			500: "Server not available"
 		}
-		try:
-			configFile = open(self._file)
-			dataFile = json.load(configFile)
-			self._login = dataFile["login"]
-			self._token = dataFile["token"]
-		except:
-			raise Exception("Error with file " + self._file + "\n")
+		if config:
+			with open(config, "r") as confFile:
+				try:
+					dataFile = json.load(confFile)
+					self._login = dataFile["login"]
+					self._token = dataFile["token"]
+				except:
+					raise Exception("Error with file " + self._file + "\n")
+		else:
+			if "SMS_LOGIN" not in os.environ:
+				raise Exception("Missing SMS_LOGIN")
+			if "SMS_TOKEN" not in os.environ:
+				raise Exception("Missing SMS_TOKEN")
+			self._login = os.environ["SMS_LOGIN"]
+			self._token = os.environ["SMS_TOKEN"]
 
 	def _makeRoute(self, message):
 		return self._URL.format(self._login, self._token, urllib.quote(message))
@@ -45,7 +53,7 @@ def usage():
 
 if __name__ == '__main__':
 	if len(sys.argv) > 1 or not sys.stdin.isatty():
-		config = "config.json"
+		config = None
 		for arg in sys.argv:
 			if arg.startswith("--config="):
 				tab = arg.split("=")
