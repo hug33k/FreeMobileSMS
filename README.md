@@ -26,6 +26,12 @@ $>./sms.py "Hello World"
 
 $>./sms.py --config=my_config.json "Hello world"
 200 Message send
+
+$>echo "Foo" | ./sms.py
+200 Message send
+
+$>echo "Bar" > tmp && ./sms.py < tmp
+200 Message send
 ````
 
 ##Possible return values

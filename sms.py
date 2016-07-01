@@ -44,7 +44,7 @@ def usage():
 	print("./sms.py [--config=file] message")
 
 if __name__ == '__main__':
-	if len(sys.argv) > 1:
+	if len(sys.argv) > 1 or not sys.stdin.isatty():
 		config = "config.json"
 		for arg in sys.argv:
 			if arg.startswith("--config="):
@@ -56,7 +56,11 @@ if __name__ == '__main__':
 					usage()
 					sys.exit(1)
 		sms = FreeMobileSMS(config)
-		code, message = sms.send(sys.argv[1])
+		if not sys.stdin.isatty():
+			content = sys.stdin.read()
+		else:
+			content = sys.argv[1]
+		code, message = sms.send(content)
 		print (str(code) + " " + message)
 	else:
 		usage()
