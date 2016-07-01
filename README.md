@@ -1,5 +1,5 @@
 #Free Mobile SMS
-
+[![Build Status](https://travis-ci.org/hug33k/FreeMobileSMS.svg?branch=master)](https://travis-ci.org/hug33k/FreeMobileSMS)
 ![Logo Free Mobile](http://www.universfreebox.com/UserFiles/image/freemobile(1).png)
 
 ##Description

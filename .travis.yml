@@ -1,0 +1,9 @@
+language: python
+
+python:
+  - "2.7"
+
+script: ./sms.py "TravisCI"
+
+notifications:
+  slack: humanitteam:y6qtT6JIrhYg1CyJo8H75y1O
