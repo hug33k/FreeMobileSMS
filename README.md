@@ -14,7 +14,7 @@ Python client to send SMS via french mobile operator Free Mobile.
 
 You need to set ___SMS_LOGIN___ and ___SMS_TOKEN___ variables.
 
-### With configuratino file
+### With configuration file
 
 You have to write your informations in a file like this :
 ```json
