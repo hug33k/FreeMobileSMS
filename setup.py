@@ -1,12 +1,24 @@
 from setuptools import setup
 
+try:
+   import pypandoc
+   description = pypandoc.convert("README.md", "rst")
+except (IOError, ImportError):
+   description = "Library to use Free Mobile SMS service with Python"
+
+try:
+    with open(".version", "r") as file:
+        version = file.read()
+except EnvironmentError:
+    version = "0.0.0"
+
 setup(
     name="freemobilesms",
     description="Free Mobile SMS Service",
-    long_description="Library to use Free Mobile SMS service with Python",
-    version="0.1.0",
+    long_description=description,
+    version=version,
     url="https://github.com/hug33k/FreeMobileSMS",
-    download_url="https://github.com/hug33k/FreeMobileSMS/archive/0.1.0.tar.gz",
+    download_url="https://github.com/hug33k/FreeMobileSMS/archive/{version}.tar.gz".format(version=version),
     author="Hugo SCHOCH",
     author_email="schoch.hugo@gmail.com",
     license="Apache2",
