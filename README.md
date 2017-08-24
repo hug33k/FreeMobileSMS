@@ -19,7 +19,6 @@ You need to set ___SMS_LOGIN___ and ___SMS_TOKEN___ variables.
 You have to write your infos in a file like this :
 
 ```json
->>>>>>> 82c767beb3a3ad5db5267fe6b94c96149543a79b
 {
     "login": YOUR_FREE_MOBILE_LOGIN,
     "token": TOKEN_GIVEN_BY_FREE_MOBILE
