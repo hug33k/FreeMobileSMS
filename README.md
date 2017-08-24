@@ -1,7 +1,7 @@
 # Free Mobile SMS
 
 [![Build Status](https://travis-ci.org/hug33k/FreeMobileSMS.svg?branch=master)](https://travis-ci.org/hug33k/FreeMobileSMS)
-
+[![PyPI version](https://badge.fury.io/py/freemobilesms.svg)](https://badge.fury.io/py/freemobilesms)
 <img src="http://www.universfreebox.com/UserFiles/image/freemobile(1).png" alt="Logo Free Mobile" height="50px;"/>
 
 ## Description
