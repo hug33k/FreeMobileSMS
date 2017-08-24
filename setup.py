@@ -30,7 +30,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "sms=freemobilesms.main:run"
+            "sms=freemobilesms.sms.main:run"
         ]
     }
 )
