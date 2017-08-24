@@ -58,3 +58,6 @@ target/
 
 # Configuration file
 config.json
+
+# Dev
+.idea/

@@ -1,6 +1,8 @@
 # Free Mobile SMS
+
 [![Build Status](https://travis-ci.org/hug33k/FreeMobileSMS.svg?branch=master)](https://travis-ci.org/hug33k/FreeMobileSMS)
-![Logo Free Mobile](http://www.universfreebox.com/UserFiles/image/freemobile(1).png)
+
+<img src="http://www.universfreebox.com/UserFiles/image/freemobile(1).png" alt="Logo Free Mobile" height="50px;"/>
 
 ## Description
 
@@ -12,14 +14,17 @@ Python client to send SMS via french mobile operator Free Mobile.
 
 You need to set ___SMS_LOGIN___ and ___SMS_TOKEN___ variables.
 
-### With configuratino file
+### With configuration file
+
 You have to write your infos in a file like this :
-````json
+
+```json
+>>>>>>> 82c767beb3a3ad5db5267fe6b94c96149543a79b
 {
     "login": YOUR_FREE_MOBILE_LOGIN,
     "token": TOKEN_GIVEN_BY_FREE_MOBILE
 }
-````
+```
 
 Now, you can have to use it with specific flag (--config=_FILE_).
 
@@ -37,7 +42,7 @@ service.send("Message")
 
 #### Command Line
 
-````shell
+```shell
 $>./sms.py "Hello World"
 200 Message send
 
@@ -49,7 +54,7 @@ $>echo "Foo" | ./sms.py
 
 $>echo "Bar" > tmp && ./sms.py < tmp
 200 Message send
-````
+```
 
 ## Status values
 
