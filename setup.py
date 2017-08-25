@@ -38,7 +38,8 @@ setup(
         "freemobilesms"
     ],
     install_requires=[
-        "urllib3"
+        "urllib3",
+        "requests"
     ],
     entry_points={
         "console_scripts": [
