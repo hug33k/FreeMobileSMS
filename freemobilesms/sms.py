@@ -32,7 +32,7 @@ class FreeMobileSMS(object):
             self._token = os.environ["SMS_TOKEN"]
 
     def _make_route(self, message):
-        return self._URL.format(self._login, self._token, urllib.quote(message))
+        return self._URL.format(self._login, self._token, urllib.quote(message.encode('utf-8')))
 
     def _check_code(self, code):
         if code in self._codes:
