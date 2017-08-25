@@ -2,7 +2,11 @@
 
 import json
 import os
-import urllib
+import requests
+try:
+    from urllib.parse import quote
+except ImportError:
+    from urllib import quote
 
 
 class FreeMobileSMS(object):
@@ -32,7 +36,7 @@ class FreeMobileSMS(object):
             self._token = os.environ["SMS_TOKEN"]
 
     def _make_route(self, message):
-        return self._URL.format(self._login, self._token, urllib.quote(message.encode('utf-8')))
+        return self._URL.format(self._login, self._token, quote(message.encode('utf-8')))
 
     def _check_code(self, code):
         if code in self._codes:
@@ -42,5 +46,5 @@ class FreeMobileSMS(object):
 
     def send(self, message):
         route = self._make_route(message)
-        res = urllib.urlopen(route)
-        return self._check_code(int(res.getcode()))
+        res = requests.get(route)
+        return self._check_code(int(res.status_code))

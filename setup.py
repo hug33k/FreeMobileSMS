@@ -3,13 +3,13 @@ from setuptools import setup
 try:
    import pypandoc
    description = pypandoc.convert("README.md", "rst")
-except (IOError, ImportError):
+except:
    description = "Library to use Free Mobile SMS service with Python"
 
 try:
     with open(".version", "r") as file:
         version = file.read()
-except EnvironmentError:
+except:
     version = "0.0.0"
 
 setup(
@@ -38,7 +38,7 @@ setup(
         "freemobilesms"
     ],
     install_requires=[
-        "urllib"
+        "urllib3"
     ],
     entry_points={
         "console_scripts": [

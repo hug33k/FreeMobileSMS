@@ -15,7 +15,10 @@ def main():
     if not sys.stdin.isatty():
         msg = sys.stdin.read()
     else:
-        msg = args.message.decode(sys.stdin.encoding)
+        try:
+            msg = args.message.decode(sys.stdin.encoding)
+        except:
+            msg = args.message
     status, value = sms.send(msg)
     if args.verbose:
-        print (str(status) + " " + value)
+        print(str(status) + " " + value)
